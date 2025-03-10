@@ -72,8 +72,8 @@ COPY --from=builder /app/packages ./packages
 COPY --from=builder /app/scripts ./scripts
 COPY --from=builder /app/characters ./characters
 
-# Expose necessary ports
-EXPOSE 3000 5173
+# Expose necessary port
+EXPOSE 3000
 
 # Command to start the application
-CMD ["sh", "-c", "pnpm start --character=/app/characters/cyrene.character.json & pnpm start:client"]
+CMD ["sh", "-c", "pnpm start --character=/app/characters/cyrene.character.json"]
